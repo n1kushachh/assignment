@@ -1,0 +1,38 @@
+.buttons {
+    position: relative;
+    left: 70%;
+}
+
+hr {
+  border: 1px solid black;  
+}
+
+.wrapper {
+    width: auto;
+    margin: 3rem auto;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wrapper div {
+    height: 200px;
+    border: 1px solid black;
+    flex-basis: 31.3%;
+    margin-bottom: 50px;
+    display: flex;
+    color: #f8edd3;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-item p {
+    color: black;
+}
