@@ -53,14 +53,14 @@
             $sku=$_POST['form-sku'];
             $name=$_POST['form-name'];
             $price=$_POST['form-price'];
-            $attribute=$_POST['attribute-form']
+            // $attribute=$_POST['attribute-form']
             
       
   
-            $q="insert into assignment(sku,
+            $q="insert into assignmentdb(sku,
             name,price,attributes)
-            values('$sku',$name,
-            '$price',$attribute)";
+            values('$sku','$name'
+            $price)";
   
             mysqli_query($con,$q);
             header("location:index.php");
