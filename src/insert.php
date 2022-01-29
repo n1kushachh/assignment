@@ -19,18 +19,18 @@
         </header>
         <div class="content">
             <div class="content-left">
-                <form class="form-input" action="../insert.php" method="POST">
+                <form action="insert.php" method="POST">
                     <div class="form-group">
                       <label for="form-sku">SKU</label>
-                      <input type="text" class="form-control" id="sku" name="sku" placeholder="SKU" required>
+                      <input type="text" class="form-control" id="sku" name="sku-form" placeholder="SKU" required>
                     </div>
                     <div class="form-group">
                         <label for="form-name">NAME</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="NAME" required>
+                        <input type="text" class="form-control" id="name" name="name-form" placeholder="NAME" required>
                       </div>
                       <div class="form-group">
                         <label for="form-price">PRICE</label>
-                        <input type="number" class="form-control" id="price" name="price" placeholder="PRICE" required>
+                        <input type="number" class="form-control" id="price" name="price-form" placeholder="PRICE" required>
                       </div>
                       <select name="selectTypeSwitcher" id="productType">
                           <option value="typeSwitcher">TypeSwitcher</option>
@@ -49,16 +49,16 @@
                 <?php
         if(isset($_POST["btn"])) {
             include("connect.php");
-            $item_sku=$_POST['sku'];
-            $item_name=$_POST['name'];
-            $item_price=$_POST['price'];
-            $attribute=$_POST['attribute'];
+            $item_sku=$_POST['sku-form'];
+            $item_name=$_POST['name-form'];
+            $item_price=$_POST['price-form'];
+            // $attribute=$_POST['attribute-form'];
       
   
-            $q="insert into assignmentdb(Item_name,
-            Item_Quantity,Item_status,Date)
+            $q="insert into assignmentdb(sku,
+            name,price)
             values('$item_sku',$item_name,
-            '$item_price','$attribute')";
+            '$item_price')";
   
             mysqli_query($con,$q);
             header("location:index.php");
