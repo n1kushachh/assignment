@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="frontend/styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="frontend/app.js">></script>
+    <script src="app.js"></script>
 
     <title>Add Product</title>
 </head>
@@ -19,18 +19,18 @@
         </header>
         <div class="content">
             <div class="content-left">
-                <form action="insert.php" method="POST">
+                <form class="form-input" action="insert.php" method="POST">
                     <div class="form-group">
                       <label for="form-sku">SKU</label>
-                      <input type="text" class="form-control" id="sku" name="sku-form" placeholder="SKU" required>
+                      <input type="text" class="form-control" id="sku" name="form-sku" placeholder="SKU" required>
                     </div>
                     <div class="form-group">
                         <label for="form-name">NAME</label>
-                        <input type="text" class="form-control" id="name" name="name-form" placeholder="NAME" required>
+                        <input type="text" class="form-control" id="name" name="form-name" placeholder="NAME" required>
                       </div>
                       <div class="form-group">
                         <label for="form-price">PRICE</label>
-                        <input type="number" class="form-control" id="price" name="price-form" placeholder="PRICE" required>
+                        <input type="number" class="form-control" id="price" name="form-price" placeholder="PRICE" required>
                       </div>
                       <select name="selectTypeSwitcher" id="productType">
                           <option value="typeSwitcher">TypeSwitcher</option>
@@ -46,34 +46,25 @@
                     </div>
                     <div class="form-dynamic"></div>
                 </form>
-                <?php
+            </div>
+            <?php
         if(isset($_POST["btn"])) {
             include("connect.php");
-            $item_sku=$_POST['sku-form'];
-            $item_name=$_POST['name-form'];
-            $item_price=$_POST['price-form'];
-            // $attribute=$_POST['attribute-form'];
+            $sku=$_POST['form-sku'];
+            $name=$_POST['form-name'];
+            $price=$_POST['form-price'];
+            
       
   
-            $q="insert into assignmentdb(sku,
+            $q="insert into test(sku,
             name,price)
-            values('$item_sku',$item_name,
-            '$item_price')";
+            values('$sku',$name,
+            '$price')";
   
             mysqli_query($con,$q);
             header("location:index.php");
         }
-          
-        // if(!mysqli_query($con,$q))
-        // {
-            // echo "Value Not Inserted";
-        // }
-        // else
-        // {
-            // echo "Value Inserted";
-        // }
-    ?>
-            </div>
+        ?>
         </div>
     </div>
 
