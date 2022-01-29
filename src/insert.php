@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="frontend/styles/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    <script src="frontend/app.js">></script>
 
     <title>Add Product</title>
 </head>
@@ -46,7 +46,33 @@
                     </div>
                     <div class="form-dynamic"></div>
                 </form>
-
+                <?php
+        if(isset($_POST["btn"])) {
+            include("connect.php");
+            $item_sku=$_POST['sku'];
+            $item_name=$_POST['name'];
+            $item_price=$_POST['price'];
+            $attribute=$_POST['attribute'];
+      
+  
+            $q="insert into assignmentdb(Item_name,
+            Item_Quantity,Item_status,Date)
+            values('$item_sku',$item_name,
+            '$item_price','$attribute')";
+  
+            mysqli_query($con,$q);
+            header("location:index.php");
+        }
+          
+        // if(!mysqli_query($con,$q))
+        // {
+            // echo "Value Not Inserted";
+        // }
+        // else
+        // {
+            // echo "Value Inserted";
+        // }
+    ?>
             </div>
         </div>
     </div>

@@ -46,3 +46,19 @@ hr {
     position: relative;
     right: 40%;
 }
+
+.form-group-btn {
+    position: absolute;
+    bottom: 93%;
+    left: 80%;
+}
+
+.form-group-dvd{
+    display: none;
+}
+.form-group-book{
+    display: none;
+}
+.form-group-furniture{
+    display: none;
+}
