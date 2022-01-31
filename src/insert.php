@@ -46,16 +46,33 @@
                     </div>
                     <div class="form-dynamic"></div>
                 </form>
-
                 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // collect value of input field
-                    $sku = $_POST['sku'];
-                    $name = $_POST['name']
-                    echo $sku;
-                    echo $name;    
-                }
-?>
+        if(isset($_POST["btn"])) {
+            include("connect.php");
+            $sku=$_POST['sku'];
+            $name=$_POST['name'];
+            $price=$_POST['price'];
+            // $date=$_POST['idate'];
+      
+  
+            $q="insert into test(sku,
+            name,price
+            values('$sku',$name,
+            $price)";
+  
+            mysqli_query($conn,$q);
+            header("location:index.php");
+        }
+          
+        // if(!mysqli_query($con,$q))
+        // {
+            // echo "Value Not Inserted";
+        // }
+        // else
+        // {
+            // echo "Value Inserted";
+        // }
+    ?>
 
             </div>
         </div>
