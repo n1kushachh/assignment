@@ -52,13 +52,15 @@
             $sku=$_POST['sku'];
             $name=$_POST['name'];
             $price=$_POST['price'];
-            // $attr=$_POST['attribute-form'];
+            $attr=$_POST['attribute-form'];
+            
       
   
-            $q="INSERT INTO test (sku, name, price) VALUES ('$sku', '$name', '$price')";
+            $q="INSERT INTO test (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr')";
   
             mysqli_query($conn,$q);
             header("location:index.php");
+            
         }
           
         // if(!mysqli_query($con,$q))
@@ -70,7 +72,6 @@
             // echo "Value Inserted";
         // }
     ?>
-
             </div>
         </div>
     </div>
