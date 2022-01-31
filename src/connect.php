@@ -1,6 +1,6 @@
 <?php
   $conn=mysqli_connect("localhost","nikusha","","test");
-  if(!$con)
+  if(!$conn)
   {
     die("cannot connect to server");
   }    

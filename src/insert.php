@@ -52,13 +52,10 @@
             $sku=$_POST['sku'];
             $name=$_POST['name'];
             $price=$_POST['price'];
-            // $date=$_POST['idate'];
+            // $attr=$_POST['attribute-form'];
       
   
-            $q="insert into test(sku,
-            name,price
-            values('$sku',$name,
-            $price)";
+            $q="INSERT INTO test (sku, name, price) VALUES ('$sku', '$name', '$price')";
   
             mysqli_query($conn,$q);
             header("location:index.php");
