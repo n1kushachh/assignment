@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="frontend/styles/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    <script src="frontend/app.js"></script>
 
     <title>Add Product</title>
 </head>
@@ -22,15 +22,15 @@
                 <form class="form-input" action="insert.php" method="POST">
                     <div class="form-group">
                       <label for="form-sku">SKU</label>
-                      <input type="text" class="form-control" id="sku" name="form-sku" placeholder="SKU" required>
+                      <input type="text" class="form-control" id="sku" name="sku" placeholder="SKU" required>
                     </div>
                     <div class="form-group">
                         <label for="form-name">NAME</label>
-                        <input type="text" class="form-control" id="name" name="form-name" placeholder="NAME" required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="NAME" required>
                       </div>
                       <div class="form-group">
                         <label for="form-price">PRICE</label>
-                        <input type="number" class="form-control" id="price" name="form-price" placeholder="PRICE" required>
+                        <input type="number" class="form-control" id="price" name="price" placeholder="PRICE" required>
                       </div>
                       <select name="selectTypeSwitcher" id="productType">
                           <option value="typeSwitcher">TypeSwitcher</option>
@@ -46,26 +46,18 @@
                     </div>
                     <div class="form-dynamic"></div>
                 </form>
+
+                <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // collect value of input field
+                    $sku = $_POST['sku'];
+                    $name = $_POST['name']
+                    echo $sku;
+                    echo $name;    
+                }
+?>
+
             </div>
-            <?php
-        if(isset($_POST["btn"])) {
-            include("connect.php");
-            $sku=$_POST['form-sku'];
-            $name=$_POST['form-name'];
-            $price=$_POST['form-price'];
-            // $attribute=$_POST['attribute-form']
-            
-      
-  
-            $q="insert into assignmentdb(sku,
-            name,price,attributes)
-            values('$sku','$name'
-            $price)";
-  
-            mysqli_query($con,$q);
-            header("location:index.php");
-        }
-        ?>
         </div>
     </div>
 
