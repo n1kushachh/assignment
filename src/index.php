@@ -1,12 +1,3 @@
-<?php
-    include("connect.php");
-  
-
-    $q= "select * from test";
-    $query=mysqli_query($conn,$q);
-    
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,30 +17,22 @@
         <header>
             <h1>Product List</h1>
             <div class="buttons">
-                <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
+                <button type="button" href="add_product.html" class="btn btn-primary">ADD</button>
                 <button type="button" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
             </div>
             <hr>
         </header>
         <div class="wrapper">
-        <?php
-                while ($qq=mysqli_fetch_array($query)) 
-                {
-            ?>
-                <div class="wrapper">
-                        <div class="wrapper-item">
-                            <?php echo $qq['sku']; ?>
-                </div>
-                </div><br>
+            <div class="wrapper-item">
+                <input type="checkbox" class="delete-checkbox">
+                <p>JVC200123</p>
+                <p>Acme DISC</p>
+                <p>1.00$</p>
+                <p>Size: 700MB</p>
             </div>
-            <?php
-            }
-            ?>
-        
         </div>
     </div>
-            
-                
+
 
 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
