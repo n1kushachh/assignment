@@ -16,7 +16,7 @@
         <header>
             <h1>Product List</h1>
             <div class="buttons">
-                <button type="button" href="add_product.html" class="btn btn-primary">ADD</button>
+                <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
                 <button type="button" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
             </div>
             <hr>
@@ -25,7 +25,7 @@
         <?php
             include("connect.php");
 
-            $q = "SELECT * FROM test";
+            $q = "SELECT * FROM assignmentdb";
             $query = mysqli_query($conn, $q);            
         ?>
 
