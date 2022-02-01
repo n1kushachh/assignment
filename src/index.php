@@ -12,7 +12,6 @@
     <title>Product List</title>
 </head>
 <body>
-
     <div class="container">
         <header>
             <h1>Product List</h1>
@@ -23,13 +22,28 @@
             <hr>
         </header>
         <div class="wrapper">
+        <?php
+            include("connect.php");
+
+            $q = "SELECT * FROM test";
+            $query = mysqli_query($conn, $q);            
+        ?>
+
+            <?php
+
+                while($qq=mysqli_fetch_array($query))
+                {
+            ?>
             <div class="wrapper-item">
                 <input type="checkbox" class="delete-checkbox">
-                <p>JVC200123</p>
-                <p>Acme DISC</p>
-                <p>1.00$</p>
-                <p>Size: 700MB</p>
+                <p><?php echo $qq['sku'];?></p>
+                <p><?php echo $qq['name'];?></p>
+                <p><?php echo $qq['price'];?>$</p>
+                <p><?php echo $qq['attribute'];?></p>
             </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 
