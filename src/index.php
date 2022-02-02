@@ -31,10 +31,13 @@
     <div class="container">
         <header>
             <h1>Product List</h1>
+            <form action="" method="POST">
             <div class="buttons">
                 <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
-                <button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to delete?')" id="delete-product-btn">MASS DELETE</button>
+                <button type="submit" name="submit" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
             </div>
+            </form>
+
             <hr>
         </header>
         <div class="wrapper">
@@ -52,7 +55,7 @@
             ?>
             <div class="wrapper-item">
                 <form action="" method="POST">
-                <input type="checkbox" name="checkbox[<?php echo $qq['id']?>]" class="delete-checkbox">
+                <input type="checkbox" name="records[]" class="delete-checkbox" value="<?php echo $qq['id'];?>">
                 </form>
                 <p><?php echo $qq['sku'];?></p>
                 <p><?php echo $qq['name'];?></p>
@@ -64,14 +67,10 @@
             ?>
 
             <?php
-            $delete = $_POST['checkbox']
-            foreach ($delete as $id => $val) {
-                if($val=='checked'){
-                    $query="DELETE FROM assignmentdb WHERE id = '".$id."'";
-                    $result= mysqli_query($conn, $query) or die("Invalid query");
+                if(isset($_POST['submit'])){
+                    $numberOfCheckbox = count($_POST['records']);
+                    echo $numberOfCheckbox;
                 }
-            }
-
             ?>
 
 
