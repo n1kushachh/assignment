@@ -58,7 +58,7 @@
             
             
             
-            // $q="INSERT INTO assignmentdb (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr_dvd')";
+            $q="INSERT INTO assignmentdb (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr_dvd')";
             
             mysqli_query($conn,$q);
             header("location:index.php");
