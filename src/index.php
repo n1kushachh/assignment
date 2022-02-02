@@ -31,11 +31,13 @@
     <div class="container">
         <header>
             <h1>Product List</h1>
+            <div class="buttons">
+                <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
+                <button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to delete?')" id="delete-product-btn">MASS DELETE</button>
+            </div>
             <hr>
         </header>
         <div class="wrapper">
-        <div class="wrapper-item">
-                <form action="" method="POST">
         <?php
             include("connect.php");
 
@@ -48,7 +50,8 @@
                 while($qq=mysqli_fetch_array($query))
                 {
             ?>
-
+            <div class="wrapper-item">
+                <form action="" method="POST">
                 <input type="checkbox" name="id" class="delete-checkbox" value=<?php echo $qq['id'];?>>
                 </form>
                 <p><?php echo $qq['sku'];?></p>
