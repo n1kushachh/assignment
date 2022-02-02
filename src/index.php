@@ -63,17 +63,7 @@
             }
             ?>
 
-            <?php
-                if(isset($_POST['submit'])){
-                    $boxes = $_POST['checkbox'];
-                    foreach ($boxes as $box) {
-                        $deletequery = "DELETE FROM assignmentdb WHERE id = '$box'";
-                        mysqli_query($conn, $deletequery);
-                    }
-                } else {
-                    echo $boxes;
-                }
-            ?>
+
 
         </div>
     </div>
