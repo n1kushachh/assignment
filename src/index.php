@@ -68,8 +68,10 @@
                     $boxes = $_POST['checkbox'];
                     foreach ($boxes as $box) {
                         $deletequery = "DELETE FROM assignmentdb WHERE id = '$box'";
-                        mysqli_query($conn, $deletequery)
+                        mysqli_query($conn, $deletequery);
                     }
+                } else {
+                    echo "Wrong";
                 }
             ?>
 
