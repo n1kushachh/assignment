@@ -52,7 +52,7 @@
             $sku=$_POST['sku'];
             $name=$_POST['name'];
             $price=$_POST['price'];
-            $attr=$_POST['attribute-form'];
+            $attr=$_POST['attribute-height'] + "x" + $_POST['attribute-width'] + "x" + $_POST['attribute-length'];
             
       
   

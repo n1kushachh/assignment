@@ -17,7 +17,7 @@
             <h1>Product List</h1>
             <div class="buttons">
                 <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
-                <button type="button" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
+                <button type="button" class="btn btn-primary" action="delete.php" id="delete-product-btn">MASS DELETE</button>
             </div>
             <hr>
         </header>
@@ -35,7 +35,7 @@
                 {
             ?>
             <div class="wrapper-item">
-                <input type="checkbox" class="delete-checkbox">
+                <input type="checkbox" class="delete-checkbox" value=<?php echo $qq['sku'];?>>
                 <p><?php echo $qq['sku'];?></p>
                 <p><?php echo $qq['name'];?></p>
                 <p><?php echo $qq['price'];?>$</p>
