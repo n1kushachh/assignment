@@ -52,12 +52,12 @@
             $sku=$_POST['sku'];
             $name=$_POST['name'];
             $price=$_POST['price'];
-            $attr_dvd=$_POST['attribute-dvd'];
-            $attr_book=$_POST['attribute-book'];
+            $attr_dvd=$_POST['attribute-dvd'] . "MB" ;
+            $attr_book=$_POST['attribute-book'] . "KG"  ;
             $attr_furniture=$_POST['attribute-height'] . "x" .$_POST['attribute-width'] . "x" .$_POST['attribute-length'];
             
             
-
+            
             $q="INSERT INTO assignmentdb (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr_dvd')";
   
             mysqli_query($conn,$q);
