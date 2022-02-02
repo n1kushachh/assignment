@@ -52,7 +52,7 @@
             ?>
             <div class="wrapper-item">
                 <form action="" method="POST">
-                <input type="checkbox" name="checkbox[]" class="delete-checkbox" value=<?php echo $qq['id'];?>>
+                <input type="checkbox" name="checkbox" class="delete-checkbox" value=<?php echo $qq['id'];?>>
                 </form>
                 <p><?php echo $qq['sku'];?></p>
                 <p><?php echo $qq['name'];?></p>
@@ -63,6 +63,14 @@
             }
             ?>
 
+            <?php
+
+                if(isset($_POST['checkbox'])){
+                    $name = $_POST['checkbox'];
+                    echo $name;
+                }
+
+            ?>
 
 
         </div>
