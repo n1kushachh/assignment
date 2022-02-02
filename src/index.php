@@ -59,20 +59,21 @@
                 <p><?php echo $qq['price'];?>$</p>
                 <p><?php echo $qq['attribute'];?></p>
             </div>
-            </form>
+            
             <?php
             }
             ?>
 
             <?php
                 if(isset($_POST['deleteBtn'])){
-                    $numberOfCheckbox = count($_POST['records']);
-                    echo $_POST['records'];
+                    $numberOfCheckBox = count($_POST['records']);
+                    echo $numberOfCheckBox;
                 }
             ?>
 
 
         </div>
+        </form>
     </div>
 
 
