@@ -17,7 +17,9 @@
             <h1>Product List</h1>
             <div class="buttons">
                 <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
-                <button type="button" class="btn btn-primary" action="delete.php" id="delete-product-btn">MASS DELETE</button>
+                <button type="button" class="btn btn-primary" onclick="return confirm('Are you sure you want to delete?')" id="delete-product-btn">MASS DELETE</button>
+
+
             </div>
             <hr>
         </header>
@@ -48,7 +50,7 @@
             ?>
         </div>
     </div>
-            
+
 
 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
