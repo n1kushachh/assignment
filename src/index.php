@@ -18,7 +18,7 @@
     include("connect.php");
     if(isset($_POST['submit']))   //THE NAME OF THE BUTTON IS delete. 
    {
-      foreach ($_POST["id"] as $id){
+      foreach ($_GET["id"] as $id){
       $de1 = "DELETE FROM assignmentdb WHERE PID='$id'";
       if(mysqli_query($conn, $de1))
       echo "<b>Deletion Successful. </b>";
