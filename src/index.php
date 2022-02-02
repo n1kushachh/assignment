@@ -12,16 +12,20 @@
     <title>Product List</title>
 </head>
 <body>
+    
+    
     <?php
-    include("connect.php")
-    if(isset($_POST['submit'])){
-        if(isset($_POST['id'])){
-            foreach($_POST['id'] as $id){
-                $query = "DELETE FROM assignmentdb WHERE id ='$id'";
-                mysqli_query($conn, $query);
-            }
-        }
-    }
+    include("connect.php");
+    if(isset($_POST['submit']))   //THE NAME OF THE BUTTON IS delete. 
+   {
+      foreach ($_POST["checkbox"] as $id){
+      $de1 = "DELETE FROM assignmentdb WHERE PID='$id'";
+      if(mysqli_query($conn, $de1))
+      echo "<b>Deletion Successful. </b>";
+      else
+      echo "ERROR: Could not execute";
+      }
+   }
 
     ?>
     <div class="container">
