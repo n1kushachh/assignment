@@ -34,7 +34,7 @@
             <div class="buttons">
                 <form action="" method="POST">
                     <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
-                    <button type="submit" name="submit" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
+                    <button type="submit" name="deleteBtn" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
                 
             </div>
             <hr>
@@ -65,7 +65,7 @@
             ?>
 
             <?php
-                if(isset($_POST['submit'])){
+                if(isset($_POST['deleteBtn'])){
                     $numberOfCheckbox = count($_POST['records']);
                     echo $numberOfCheckbox;
                 }
