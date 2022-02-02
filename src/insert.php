@@ -52,8 +52,8 @@
             $sku=$_POST['sku'];
             $name=$_POST['name'];
             $price=$_POST['price'];
-            $attr_dvd=$POST['attribute-dvd'];
-            $attr_book=$POST['attribute-book'];
+            $attr_dvd=$_POST['attribute-dvd'];
+            $attr_book=$_POST['attribute-book'];
             $attr_furniture=$_POST['attribute-height'] . "x" .$_POST['attribute-width'] . "x" .$_POST['attribute-length'];
             
             
