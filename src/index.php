@@ -54,12 +54,12 @@
             ?>
             <div class="wrapper-item">
                 <input type="checkbox" name="records[]" class="delete-checkbox" value="<?php echo $qq['id'];?>">
-                </form>
                 <p><?php echo $qq['sku'];?></p>
                 <p><?php echo $qq['name'];?></p>
                 <p><?php echo $qq['price'];?>$</p>
                 <p><?php echo $qq['attribute'];?></p>
             </div>
+            </form>
             <?php
             }
             ?>
