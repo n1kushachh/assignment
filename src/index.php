@@ -71,7 +71,7 @@
                     $i = 0;
                     while($i < $numberOfCheckBox) {
                         $keyToDelete = $_POST['records'][$i];
-                        $deleteQuery = "DELETE FROM assignmentdb WHERE id = '$keyToDelete'");
+                        $deleteQuery = "DELETE FROM assignmentdb WHERE id = '$keyToDelete'";
                         $query2 = mysqli_query($conn, $deleteQuery);
                         
                      $i++;   
