@@ -31,13 +31,12 @@
     <div class="container">
         <header>
             <h1>Product List</h1>
-            <form action="" method="POST">
             <div class="buttons">
-                <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
-                <button type="submit" name="submit" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
+                <form action="" method="POST">
+                    <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
+                    <button type="submit" name="submit" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
+                </form>
             </div>
-            </form>
-
             <hr>
         </header>
         <div class="wrapper">
