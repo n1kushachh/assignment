@@ -67,7 +67,7 @@
             <?php
                 if(isset($_POST['deleteBtn'])){
                     $numberOfCheckbox = count($_POST['records']);
-                    echo $numberOfCheckbox;
+                    echo $_POST['records'];
                 }
             ?>
 
