@@ -64,11 +64,13 @@
             ?>
 
             <?php
-
-                if(isset($_POST['checkbox'])){
-                    $name = $_POST['checkbox'];
-                    echo $name;
+            $delete = $_POST['checkbox']
+            foreach ($delete as $id => $val) {
+                if($val=='checked'){
+                    $query="DELETE FROM assignmentdb WHERE id = '".$id."'";
+                    $result= mysqli_query($conn, $query) or die("Invalid query");
                 }
+            }
 
             ?>
 
