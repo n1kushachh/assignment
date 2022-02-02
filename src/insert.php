@@ -53,16 +53,12 @@
             $name=$_POST['name'];
             $price=$_POST['price'];
             $attr_dvd=$_POST['attribute-dvd'] . " MB" ;
-            $attr_book=$_POST['attribute-book'] . " KG"  ;
-            $attr_height=$_POST['attribute-height']
-            $attr_width=$_POST['attribute-width']
-            $attr_length=$_POST['attribute-length']
-            
+            $attr_book=$_POST['attribute-book'] . " KG";
             $attr_furniture=$_POST['attribute-height'] . "x" .$_POST['attribute-width'] . "x" .$_POST['attribute-length'];
             
             
             
-            $q="INSERT INTO assignmentdb (sku, name, price, mb, kg, height, width, length) VALUES ('$sku', '$name', '$price', '$attr_dvd', '$attr_book', '$attr_height', '$attr_width', '$attr_length')";
+            $q="INSERT INTO assignmentdb (sku, name, price, mb, kg, height, width, length) VALUES ('$sku', '$name', '$price', '$attr_dvd')";
   
             mysqli_query($conn,$q);
             header("location:index.php");
