@@ -35,7 +35,7 @@
                 <form action="" method="POST">
                     <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
                     <button type="submit" name="submit" class="btn btn-primary" id="delete-product-btn">MASS DELETE</button>
-                </form>
+                
             </div>
             <hr>
         </header>
@@ -53,7 +53,6 @@
                 {
             ?>
             <div class="wrapper-item">
-                <form action="" method="POST">
                 <input type="checkbox" name="records[]" class="delete-checkbox" value="<?php echo $qq['id'];?>">
                 </form>
                 <p><?php echo $qq['sku'];?></p>
