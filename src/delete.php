@@ -1,6 +1,10 @@
 <?php
-	include("connect.php");
-	$id = $_GET['id'];
-	$q = "delete from assignmentdb where id = $id ";
-	mysqli_query($conn,$q);	
+include("connect.php")
+
+if(isset($_POST['id'])){
+	foreach($_POST['id'] as $id){
+		$query="DELETE FROM assignmentdb WHERE id='$id'"
+		mysqli_query($conn, $query)
+	}
+}
 ?>
