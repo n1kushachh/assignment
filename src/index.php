@@ -65,18 +65,20 @@
             ?>
 
             <?php
+                include("connect.php");
                 if(isset($_POST['deleteBtn'])){
                     $numberOfCheckBox = count($_POST['records']);
                     $i = 0;
                     while($i < $numberOfCheckBox) {
                         $keyToDelete = $_POST['records'][$i];
-                        mysql_query("DELETE FROM assignmentdb WHERE id = '$keyToDelete'")
+                        $deleteQuery = "DELETE FROM assignmentdb WHERE id = '$keyToDelete'");
+                        $query2 = mysqli_query($conn, $deleteQuery);
                         
                      $i++;   
                     }
 
                     //Refresh page
-                    header('Location:index.php')
+                    header('Location:index.php');
                 }
             ?>
 
