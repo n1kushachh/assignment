@@ -67,7 +67,16 @@
             <?php
                 if(isset($_POST['deleteBtn'])){
                     $numberOfCheckBox = count($_POST['records']);
-                    echo $numberOfCheckBox;
+                    $i = 0;
+                    while($i < $numberOfCheckBox) {
+                        $keyToDelete = $_POST['records'][$i];
+                        mysql_query("DELETE FROM assignmentdb WHERE id = '$keyToDelete'")
+                        
+                     $i++;   
+                    }
+
+                    //Refresh page
+                    header('Location:index.php')
                 }
             ?>
 
