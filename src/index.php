@@ -52,7 +52,7 @@
             ?>
             <div class="wrapper-item">
                 <form action="" method="POST">
-                <input type="checkbox" name="id[]" class="delete-checkbox" value=<?php echo $qq['id'];?>>
+                <input type="checkbox" name="checkbox[]" class="delete-checkbox" value=<?php echo $qq['id'];?>>
                 </form>
                 <p><?php echo $qq['sku'];?></p>
                 <p><?php echo $qq['name'];?></p>
@@ -62,6 +62,17 @@
             <?php
             }
             ?>
+
+            <?php
+                if(isset($_POST['submit'])){
+                    $boxes = $_POST['checkbox'];
+                    foreach ($boxes as $box) {
+                        $deletequery = "DELETE FROM assignmentdb WHERE id = '$box'";
+                        mysqli_query($conn, $deletequery)
+                    }
+                }
+            ?>
+
         </div>
     </div>
 
