@@ -56,12 +56,25 @@
             $attr_book=$_POST['attribute-book'] . " KG"  ;
             $attr_furniture=$_POST['attribute-height'] . "x" .$_POST['attribute-width'] . "x" .$_POST['attribute-length'];
             
+            if(isset($_POST['attribute-dvd'])){
+                $q="INSERT INTO assignmentdb (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr_dvd')";
             
+                mysqli_query($conn,$q);
+                header("location:index.php");
+            } elseif(isset($_POST['attribute-book'])) {
+                $q="INSERT INTO assignmentdb (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr_book')";
             
-            $q="INSERT INTO assignmentdb (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr_dvd')";
+                mysqli_query($conn,$q);
+                header("location:index.php");
+            } else {
+                $q="INSERT INTO assignmentdb (sku, name, price, attribute) VALUES ('$sku', '$name', '$price', '$attr_furniture')";
             
-            mysqli_query($conn,$q);
-            header("location:index.php");
+                mysqli_query($conn,$q);
+                header("location:index.php");
+            }
+
+            
+
             
         }
           
