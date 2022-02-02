@@ -35,7 +35,9 @@
                 {
             ?>
             <div class="wrapper-item">
-                <input type="checkbox" class="delete-checkbox" value=<?php echo $qq['sku'];?>>
+                <form action="" method="POST">
+                <input type="checkbox" class="delete-checkbox" value=<?php echo $qq['id'];?>>
+                </form>
                 <p><?php echo $qq['sku'];?></p>
                 <p><?php echo $qq['name'];?></p>
                 <p><?php echo $qq['price'];?>$</p>
