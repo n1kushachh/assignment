@@ -71,7 +71,7 @@
                         mysqli_query($conn, $deletequery);
                     }
                 } else {
-                    echo "Wrong";
+                    echo $boxes;
                 }
             ?>
 
