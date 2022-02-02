@@ -2,10 +2,10 @@ $(document).ready(function(){
     $("#productType").on("change",function(){
         if($("#productType").val() == "dvd" == true){
             $(".form-dynamic").empty()
-            $(".form-dynamic").append("<div class='form-group'><label for='form-dvd'>Please enter size of DVD (MB)</label><input type='number' name='attribute-form' class='form-control' id='size' placeholder='Size'></div>")
+            $(".form-dynamic").append("<div class='form-group'><label for='form-dvd'>Please enter size of DVD (MB)</label><input type='number' name='attribute-dvd' class='form-control' id='size' placeholder='Size'></div>")
         } else if($("#productType").val() == "book" == true){
             $(".form-dynamic").empty()
-            $(".form-dynamic").append("<div class='form-group'><label for='form-book'>Please enter weight of book (kg)</label><input type='number' name='attribute-form' class='form-control' id='weight' placeholder='Weight'></div>")
+            $(".form-dynamic").append("<div class='form-group'><label for='form-book'>Please enter weight of book (kg)</label><input type='number' name='attribute-book' class='form-control' id='weight' placeholder='Weight'></div>")
         } else {
             $(".form-dynamic").empty()
             $(".form-dynamic").append("<div class='form-group'><label for='form-furniture-height'>Please enter height of furniture</label><input type='number' name='attribute-height' class='form-control' id='height' placeholder='Height'></div>")
