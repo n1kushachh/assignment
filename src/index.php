@@ -17,7 +17,7 @@
             <h1>Product List</h1>
             <div class="buttons">
                 <button type="button" onclick="location.href='insert.php'" class="btn btn-primary">ADD</button>
-                <button type="button" class="btn btn-primary" onclick="return confirm('Are you sure you want to delete?')" id="delete-product-btn">MASS DELETE</button>
+                <button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to delete?')" id="delete-product-btn">MASS DELETE</button>
 
 
             </div>
@@ -38,7 +38,7 @@
             ?>
             <div class="wrapper-item">
                 <form action="" method="POST">
-                <input type="checkbox" class="delete-checkbox" value=<?php echo $qq['id'];?>>
+                <input type="checkbox" name="id[]" class="delete-checkbox" value=<?php echo $qq['id'];?>>
                 </form>
                 <p><?php echo $qq['sku'];?></p>
                 <p><?php echo $qq['name'];?></p>
