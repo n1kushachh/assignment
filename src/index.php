@@ -12,6 +12,18 @@
     <title>Product List</title>
 </head>
 <body>
+    <?php
+    include("connect.php")
+    if(isset($_POST['submit'])){
+        if(isset($_POST['id'])){
+            foreach($_POST['id'] as $id){
+                $query = "DELETE FROM assignmentdb WHERE id ='$id'";
+                mysqli_query($conn, $query);
+            }
+        }
+    }
+
+    ?>
     <div class="container">
         <header>
             <h1>Product List</h1>
